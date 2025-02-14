@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Roboto&display=swap');
+
+:root{
+    --imageshadow: #000;
+}
+
+h1, h2, header, div, p
+{
+    color: white;
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+body {
+    font-family: 'Pixelify Sans', sans-serif;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+    background-image: url('main_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Keeps the background in place */
+    background-repeat: no-repeat;
+    color: white; /* Makes text readable */
+}
+
+header{
+    position: fixed;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    z-index: 999;
+    background: linear-gradient(#000a, #fff0);
+    /*transition: cubic-bezier(0.19, 1, 0.22, 1);*/
+}
+
+.page{
+    background: #2224;
+}
+
+.intro_image{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    box-shadow: inset 0 0 100px 100px var(--imageshadow);
+    z-index: 1000;
+ }
+
+@keyframes moveUpDown {
+    0%, 100% {
+        transform: translate(-50%, 0);
+    }
+    50% {
+        transform: translate(-50%, -20px);
+    }
+}
+
+.arrow_image {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    animation: moveUpDown 2s infinite; /* Adjust the duration as needed */
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-300%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(250%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.title_half1, .title_half2 {
+    /* opacity: 0; */
+    transform: translateX(-100%);
+    transform: translateX(100%);
+    z-index: 901;
+    font-size: 5rem;
+}
+
+.slide-in-left {
+    animation: slideInFromLeft 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.slide-in-right {
+    animation: slideInFromRight 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+
+
+.cursor-pointer {
+   cursor: pointer;
+}
+
+.intro {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title{
+    user-select: none;
+}
+
+.player_image{
+    width: 25%;
+    height: auto;
+    border: 2px solid white;
+}
+
+.intro_text{
+   position: absolute;
+   z-index: 1001;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color: white;
+   font-size: 2rem;
+   font-weight: 700;
+   text-align: center;
+   animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+   0% {opacity: 1;}
+   50% {opacity: 0;}
+   100% {opacity: 1;}
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.arrow_fade-out {
+    animation: fadeOut 1s forwards, moveUpDown 2s infinite; /* Combine both animations */
+}
+
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+/* Enemies */
+.enemies {
+    width: 50%;
+    margin: 0 auto;
+}
+.enemy_images_container {
+    display: flex;
+    justify-content: space-between;
+}
+.enemy_image {
+    max-width: 100px; /* Adjust as needed */
+}

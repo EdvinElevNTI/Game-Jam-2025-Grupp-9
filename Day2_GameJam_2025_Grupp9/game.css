@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Pixelify Sans', sans-serif;
+    color: #eee;
+    background-color: rgb(49, 51, 56);
+    text-align: center;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    z-index: 999;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.between {
+    font-size: 1.2rem;
+}
+
+/* Secret Number Box */
+.number {
+    background: #eee;
+    color: #333;
+    font-size: 4rem;
+    width: 9rem;
+    height: 9rem;
+    line-height: 9rem;
+    border-radius: 2%;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Button Wrapper Fix */
+.button-wrapper {
+    display: flex;
+    justify-content: center;  /* Ensures the buttons are centered */
+    gap: 1rem; /* Adjust the gap between buttons as needed */
+    width: 100%;  /* Make sure it takes full width of the column */
+    max-width: 350px;  /* You can set a max-width for a uniform look */
+    margin: 0 auto;  /* Center the button wrapper itself */
+}
+
+/* Ensure Buttons Span Consistently */
+.btn {
+    font-size: 1.5rem;
+    padding: 12px 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    /* transition: 0.3s ease-in-out; */
+}
+
+
+/* Input & Button Styling */
+.guess {
+    background: none;
+    border: 3px solid #eee;
+    font-size: 2rem;
+    padding: 15px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.guess::placeholder {
+    color: #bbb;
+}
+
+/* Message & Score Section */
+.message {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.label-score,
+.label-highscore {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.score{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.check {
+    background-color: rgb(90, 215, 90);
+}
+
+.again {
+    background-color: rgb(215, 90, 90);
+}
+
+@keyframes slideIn {
+    from {
+        bottom: -100px; /* Start position off-screen */
+    }
+    to {
+        bottom: 0; /* End position on-screen */
+    }
+}
+
+.footer
+{
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.footer.show {
+    animation-name: slideIn;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.fadeOut {
+    animation: fadeOut 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.achievement_bg
+{
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+}
+
+
+
+.loading {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .dot {
+    opacity: 0;
+    animation: dot-blink 1.5s infinite;
+  }
+  
+  .dot:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .dot:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  
+  .dot:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  
+  @keyframes dot-blink {
+    0%, 20%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
