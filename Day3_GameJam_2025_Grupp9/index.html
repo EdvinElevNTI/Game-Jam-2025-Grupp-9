@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rogue-Shinobi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body class="m-0 px-0 p-0 text-center flex flex-column min-h-screen bg-dark text-light">
+    
+    <img onclick="hideIntro()" class="intro_image cursor-pointer position-absolute" src="intro_background.jpg" alt="Picture">
+    <p onclick="hideIntro()" class="intro_text cursor-pointer">
+        <span style="font-family:'Courier New', Courier, monospace;">[</span>
+        Press anywhere to begin
+        <span style="font-family:'Courier New', Courier, monospace;">]</span>
+    </p>
+    
+    <header class="header"> <!--Header here-->
+        <nav class="navbar navbar-expand-lg px-2 navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <!-- <img src="home.png" alt="Logo" width="20" height="20" class="d-inline-block align-text-top"> -->
+                    Home
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item me-4">
+                            <a class="nav-link" href="#player">
+                                <img src="icons/shuriken.png" alt="Logo" width="20" height="20" class="d-inline-block mb-1">
+                                Player
+                            </a>
+                        </li>
+                        <li class="nav-item me-4">
+                            <a class="nav-link" href="#enemies">
+                                <img src="icons/skull.png" alt="Logo" width="20" height="20" class="d-inline-block mb-1">
+                                Enemies
+                            </a>
+                        </li>
+                        <li class="nav-item me-2">
+                            <a class="nav-link" href="#story">
+                                <img src="icons/story.png" alt="Logo" width="20" height="20" class="d-inline-block mb-1">
+                                Story
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="d-none main_content text-light">
+
+         <!-- Intro -->
+         <div class="intro">
+            <div class="d-flex justify-content-center">
+            
+                <div class="title title_container d-flex justify-content-center">
+                    <h1 class="d-flex title_half1 me-1 mb-5">
+                        <p>R</p>
+                        <p>o</p>
+                        <p>g</p>
+                        <p>u</p>
+                        <p>e</p>
+                    </h1> <!--Rogue-->
+                    <h1 class="d-flex title_half2 ms-1 mt-5">
+                        <p>S</p>
+                        <p>h</p>
+                        <p>i</p>
+                        <p>n</p>
+                        <p>o</p>
+                        <p>b</p>
+                        <p>i</p>
+                    </h1> <!--Shinobi-->
+                </div>
+            </div>
+
+            
+            <img class="arrow_image" src="arrow.png" alt="Picture">
+        </div>
+
+        <div class="page"> <!--Holds all elements except intro-->
+            <!-- Player -->
+            <div class="player" id="player" style="font-size:1.5rem;">
+
+                <div class="p-4">
+                    <h2 class="player-container shadow-white">The Player: You</h2>
+                    <p>
+                        Play as Raikou, a lone shinobi ninja, and fend off waves of
+                        <br>
+                        enemies, level up, and choose the right path to victory.
+                        <br>
+                        Your journey begins now.
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <img class="player_image p-4 mt-2" src="player/p1.png" alt="Picture" id="playerImage">
+                    </div>
+                    <div id="enemies"></div>
+                </div>
+
+            </div>
+            <!-- Enemies -->
+            <div class="enemies my-4 px-4">
+                <h2 class="mb-2 mt-4 shadow-white">Enemies</h2>
+                <p class="enemies-intro-text">Fight against the dangerous Akatsuki clan</p>
+                    <div class="enemies-container d-flex justify-content-center w-100 p-4">
+                        <div class="me-4">
+                            <img class="enemy_image1" src="enemy2.png" alt="Picture">
+                            <p class="mt-2">Akatsuki Grunt</p>
+                        </div>
+                        <div class="ms-4">
+                            <img class="enemy_image2" src="enemy1.png" alt="Picture">
+                            <p class="mt-2">Akatsuki Samurai</p>
+                        </div>
+                    </div>
+            </div>
+
+
+        <!-- Story -->
+        <div class="story mt-4 text-center" id="story">
+            <h2 class="story_text shadow-white mt-4">Story</h2>
+            <div class="d-flex justify-content-center">
+                <p class="w-50 story-container p-4">
+                    The year is 1498 and Japan is in chaos. The once peaceful village of Konoha has been overrun by the evil Akatsuki clan. The only hope for the people of Konoha is a lone shinobi ninja named Raikou. Raikou has been training for years to become a master ninja, and now it is time for him to put his skills to the test. Can Raikou defeat the Akatsuki and save the village? Only you can decide.
+                </p>
+            </div>
+        </div>
+
+
+            <!-- Bottom -->
+            <div>
+                <h4 onclick="window.location.href='game.html'" class="btn btn-dark opacity-75 rounded-circle px-3 mt-2 mb-4" style="font-size:1.5rem">?</h4>
+            </div>
+        </div>
+
+    </main>
+
+
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
